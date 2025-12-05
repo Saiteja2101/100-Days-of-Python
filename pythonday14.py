@@ -25,14 +25,16 @@ cricketers_and_networth = {
 }
 
 # 1. Setup
-card_names = list(cricketers_and_networth.keys())
+cricketers_names = list(cricketers_and_networth.keys())
+
 score = 0
 # Start the game with a random first cricketer
-first_cricketer_name = random.choice(card_names) 
+first_cricketer_name = random.choice(cricketers_names) 
 
+game_over = False
 # 2. Start the Continuous Loop
 # The game runs as long as the player keeps guessing correctly.
-while True:
+while not game_over:
     
     print(f"Current Score: {score}")
     
@@ -41,14 +43,14 @@ while True:
 
     # 3. Choose a UNIQUE Second Cricketer
     # We remove the first cricketer from the list to ensure a different choice
-    available_cards = [name for name in card_names if name != first_cricketer_name]
+    available_cricketers = [name for name in cricketers_names if name != first_cricketer_name]
     
-    if not available_cards:
+    if not available_cricketers:
         print("\n Congratulations! You ran out of unique cricketers and won the game! ")
-        break
+        game_over = True
         
     # Choose the new second cricketer
-    second_crieter_name = random.choice(available_cards)
+    second_crieter_name = random.choice(available_cricketers)
     second_crieter_networth = int(cricketers_and_networth[second_crieter_name])
     
     # 4. Get User Guess
@@ -81,5 +83,5 @@ while True:
         # LOSING condition: End the loop (and the game)
         print(f"\n Incorrect! {correct_answer} has a net worth.")
         print(f"\nGame Over! Your final score is **{score}**.")
-        break
+        game_over = True
 

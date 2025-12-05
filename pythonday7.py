@@ -42,11 +42,11 @@ while not game_over:
     print(display)
 
     if guess not in word:
-       lives -= 1
-       print(f"you have guessed the wrong letter and the remaing lives you have are {lives}")
-       if lives == 0:
-          game_over = True
-          print("You lost!")
+      lives -= 1
+      print(f"you have guessed the wrong letter and the remaing lives you have are {lives}")
+      if lives == 0:
+        game_over = True
+        print("You lost!")
 
     if "_" not in display:
        game_over = True
