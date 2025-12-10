@@ -39,7 +39,7 @@ colors = ["red", "orange", "yellow", "green", "blue", "pink"]
 #     if (-300 < sully.xcor() <300) and (-300 < sully.ycor() <300):
 #         sully.forward(random.randint(20,40))
 #         sully.right(random.choice(directions))
-#         r = random.randint(0,255)
+#         r = random .randint(0,255)
 #         g = random.randint(0,255)
 #         b = random.randint(0,255)
 #     else:
