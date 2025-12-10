@@ -82,7 +82,7 @@ colors = ["red", "orange", "yellow", "green", "blue", "pink"]
 
 sully.speed("fastest")
 sully.penup()
-
+sully.hideturtle()
 # Parameters
 dot_size = 10
 spacing = 20
