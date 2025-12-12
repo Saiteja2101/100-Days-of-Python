@@ -1,5 +1,6 @@
 from turtle import Screen       #  Importing class Screen from turtle file
 from paamu import Paamu         #  Importing class Paamu from paamu file
+from food import Food
 import time                     #  Importing time module
 
 screen = Screen()                       # Creatinmg an Object name screen from Screen Class
@@ -9,7 +10,7 @@ screen.title("Snake Game")              # Creating title for the screen
 screen.tracer(0)                        
 
 python = Paamu()                        # Creating an Object using Classfile
-
+tindi = Food()
 head = python.snake[0]                  # Assigned variable of first variable of file from Object
 
 
