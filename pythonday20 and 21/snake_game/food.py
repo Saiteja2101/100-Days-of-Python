@@ -14,3 +14,4 @@ class Food(Turtle):
         
     def food_move(self):
            self.goto(random.randint(-250, 250), random.randint(-250, 250))
+ 

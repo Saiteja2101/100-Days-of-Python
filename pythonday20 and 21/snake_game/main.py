@@ -1,6 +1,7 @@
 from turtle import Screen       #  Importing class Screen from turtle file
 from paamu import Paamu         #  Importing class Paamu from paamu file
 from food import Food
+from scoreboard import Scoreboard
 import time                     #  Importing time module
 
 screen = Screen()                       # Creatinmg an Object name screen from Screen Class
@@ -11,6 +12,7 @@ screen.tracer(0)
 
 python = Paamu()                        # Creating an Object using Classfile
 tindi = Food()
+scoreboard = Scoreboard()
 head = python.snake[0]                  # Assigned variable of first variable of file from Object
 
 
@@ -26,13 +28,18 @@ while snake_move:                       # Run the loop till the boolean function
     screen.update()                     # Updating the screen for every step
     time.sleep(0.15)                    # After updating wait for 0.15 seconds
     python.move()                       # Then Assigning the Object to move function defined in 
-    if head.xcor() > 290 or head.xcor() < -290 or head.ycor() > 290 or head.ycor() < -290:              # Telling the variable not cross boundry
+    if head.xcor() > 280 or head.xcor() < -280 or head.ycor() > 280 or head.ycor() < -280:              # Telling the variable not cross boundry
         snake_move = False              # If crosses boolean function is wrong
-    elif head.distance(tindi) < 12:
+        scoreboard.game_over()
+    if head.distance(tindi) < 15:
         tindi.food_move()
+        scoreboard.increase()
+        python.extend()
     
-            
-
+    for segment in python.snake[1:]:
+        if head.distance(segment) < 10:
+            snake_move = False
+            scoreboard.game_over()
 
 
 screen.exitonclick()                    # Close the screen whenever click on the screen 
