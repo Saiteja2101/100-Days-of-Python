@@ -28,7 +28,9 @@ while snake_move:                       # Run the loop till the boolean function
     python.move()                       # Then Assigning the Object to move function defined in 
     if head.xcor() > 290 or head.xcor() < -290 or head.ycor() > 290 or head.ycor() < -290:              # Telling the variable not cross boundry
         snake_move = False              # If crosses boolean function is wrong
-
+    elif head.distance(tindi) < 12:
+        tindi.food_move()
+    
             
 
 
