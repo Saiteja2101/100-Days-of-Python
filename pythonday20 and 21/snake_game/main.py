@@ -1,7 +1,7 @@
 from turtle import Screen       #  Importing class Screen from turtle file
 from paamu import Paamu         #  Importing class Paamu from paamu file
-from food import Food
-from scoreboard import Scoreboard
+from food import Food           #  Importing class Food from food file
+from scoreboard import Scoreboard   #  Importing class Scoreboard from scoreboard file
 import time                     #  Importing time module
 
 screen = Screen()                       # Creatinmg an Object name screen from Screen Class
@@ -10,9 +10,9 @@ screen.bgcolor("black")                 # Setting the screen background colour
 screen.title("Snake Game")              # Creating title for the screen
 screen.tracer(0)                        
 
-python = Paamu()                        # Creating an Object using Classfile
-tindi = Food()
-scoreboard = Scoreboard()
+python = Paamu()                        # Creating an Object using Class
+tindi = Food()                          # Creating an OBject using Class
+scoreboard = Scoreboard()               # Creating an OBject using Class
 head = python.snake[0]                  # Assigned variable of first variable of file from Object
 
 
@@ -31,15 +31,15 @@ while snake_move:                       # Run the loop till the boolean function
     if head.xcor() > 280 or head.xcor() < -280 or head.ycor() > 280 or head.ycor() < -280:              # Telling the variable not cross boundry
         snake_move = False              # If crosses boolean function is wrong
         scoreboard.game_over()
-    if head.distance(tindi) < 15:
-        tindi.food_move()
-        scoreboard.increase()
-        python.extend()
+    if head.distance(tindi) < 15:       # If distance between the head and tindi is less than 15cm
+        tindi.food_move()               # Calling the food_move method from Food class
+        scoreboard.increase()           # Calling the increase method from scoreboard class
+        python.extend()                 # Calling the food_move method from Food class
     
-    for segment in python.snake[1:]:
-        if head.distance(segment) < 10:
-            snake_move = False
-            scoreboard.game_over()
+    for segment in python.snake[1:]:                    # Sarting the for loop from list starting from index 1 this is called list slicing
+        if head.distance(segment) < 10:                 # If the distance of head and any of the segment from the list is less than 10cm
+            snake_move = False                          # Boolean function is wrong
+            scoreboard.game_over()                      # Calling game_over method from SCoreboard Class
 
 
 screen.exitonclick()                    # Close the screen whenever click on the screen 

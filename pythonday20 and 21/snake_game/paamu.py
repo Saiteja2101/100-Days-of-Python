@@ -9,8 +9,8 @@ class Paamu:                                          # Creating the Class
         self.snake_creation()                         # Calling the method
 
     def snake_creation(self):                         # Creating the Method
-        for position in cordinates:              # Run the loop 3 times (because there are 3 co-ordinates)
-            self.add_snake(position)
+        for position in cordinates:                   # Run the loop 3 times (because there are 3 co-ordinates)
+            self.add_snake(position)                  # calling the function
 
     def add_snake(self, position):
         turtles = Turtle(shape="square")          # Creating an Object using turtle class of square shape
@@ -19,8 +19,8 @@ class Paamu:                                          # Creating the Class
         turtles.goto(position)               # Telling each oject to goto resoective co-ordinates given in that variable
         self.snake.append(turtles)                # Adding Each Object in a file after creating that Object
 
-    def extend(self):
-        self.add_snake(self.snake[-1].position())
+    def extend(self):                                 # Extending the snake whenever snake eats the food
+        self.add_snake(self.snake[-1].position())     # Adding the next turtle to previous position of last turtle
         
 
     def move_up(self):                                # Creating the Method
